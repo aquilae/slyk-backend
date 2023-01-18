@@ -1,0 +1,30 @@
+{
+  "endOfLine": "lf",
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "printWidth": 100,
+  "trailingComma": "es5",
+  "semi": false,
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": [
+        ".test.ts"
+      ],
+      "options": {
+        "printWidth": 200
+      }
+    },
+    {
+      "files": [
+        ".babelrc",
+        ".eslintrc",
+        ".lintstagedrc",
+        ".prettierrc"
+      ],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

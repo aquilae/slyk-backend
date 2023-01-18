@@ -1,0 +1,9 @@
+.idea/**
+build/**
+**/.gitattributes
+**/.gitignore
+**/.eslintignore
+**/.npmrc
+**/.prettierignore
+**/yarn.lock
+**/yarn-error.log

@@ -1,0 +1,10 @@
+{
+  "*.js": [
+    "prettier --config .prettierrc --write",
+    "eslint --fix --quiet"
+  ],
+  "*.ts": [
+    "prettier --config .prettierrc --write",
+    "eslint --fix --quiet"
+  ],
+}

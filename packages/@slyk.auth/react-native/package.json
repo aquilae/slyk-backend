@@ -1,0 +1,7 @@
+{
+  "name": "@slyk.auth/react-native",
+  "version": "0.0.1",
+  "dependencies": {
+    "@slyk.core/react-native": "*"
+  }
+}

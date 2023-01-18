@@ -1,0 +1,7 @@
+{
+  "name": "@slyk.core/react-native",
+  "version": "0.0.1",
+  "dependencies": {
+    "debug": "^4.3.4"
+  }
+}

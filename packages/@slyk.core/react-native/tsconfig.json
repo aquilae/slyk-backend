@@ -1,0 +1,10 @@
+{
+  "extends": "../../@slyk.core/core/tsconfig.shared.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../../.typescript/@slyk.core/react-native"
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}

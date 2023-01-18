@@ -1,0 +1,13 @@
+{
+  "extends": "../../@slyk.core/core/tsconfig.shared.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../../.typescript/@slyk.auth/react-native"
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "references": [
+    { "path": "../../@slyk.core/react-native" }
+  ]
+}

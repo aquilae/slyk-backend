@@ -1,0 +1,374 @@
+{
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "sort-exports",
+    "node"
+  ],
+  "extends": [
+    "prettier",
+    "eslint-config-airbnb-base",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "settings": {},
+  "globals": {
+    "__DEV__": true,
+    "BufferEncoding": true,
+    "NodeModule": true,
+    "RequestInit": true
+  },
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/member-ordering": ["off", { // WHY: does not group properties
+      "default": [
+        "public-static-field",
+        "public-static-get",
+        "public-static-set",
+        "public-static-method",
+
+        "protected-static-field",
+        "protected-static-get",
+        "protected-static-set",
+        "protected-static-method",
+
+        "private-static-field",
+        "private-static-get",
+        "private-static-set",
+        "private-static-method",
+
+        "public-field",
+        "public-get",
+        "public-set",
+        "public-constructor",
+        "public-method",
+
+        "protected-field",
+        "protected-get",
+        "protected-set",
+        "protected-constructor",
+        "protected-method",
+
+        "private-field",
+        "private-get",
+        "private-set",
+        "private-constructor",
+        "private-method"
+      ]
+    }],
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-use-before-define": "error",
+    "arrow-parens": ["error", "as-needed"],
+    "brace-style": "off", // WHY: prettier conflict
+    "class-methods-use-this": "off",
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
+    "consistent-return": "error",
+    "eqeqeq": "error",
+    "func-call-spacing": "off", // WHY: prettier conflict
+    "function-paren-newline": "off", // WHY: prettier conflict
+    "generator-star-spacing": ["error", { "before": false, "after": true }],
+    "global-require": "error",
+    "implicit-arrow-linebreak": "off", // WHY: prettier conflict
+    // "import-order-alphabetical/order": "error", // probably fixes import/order secondary sorting?
+    "import/default": "error",
+    "import/dynamic-import-chunkname": "off", // WHY: webpack-specific
+    "import/export": "error",
+    "import/exports-last": "off",
+    "import/extensions": "off",
+    "import/first": "error",
+    "import/group-exports": "off", // WHY: it sucks
+    "import/named": "off", // WHY: throws errors
+    "import/namespace": "error",
+    "import/newline-after-import": "error",
+    "import/no-absolute-path": "error",
+    "import/no-amd": "error",
+    "import/no-commonjs": "error",
+    "import/no-cycle": "warn",
+    "import/no-deprecated": "error",
+    "import/no-duplicates": "error",
+    "import/no-dynamic-require": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.t.ts"] }],
+    "import/no-internal-modules": "off", // WHY: old-code compat
+    "import/no-mutable-exports": "error",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
+    "import/no-namespace": "off",
+    "import/no-nodejs-modules": "off",
+    "import/no-relative-parent-imports": "off", // WHY: old-code compat
+    "import/no-restricted-path": "off",
+    "import/no-self-import": "error",
+    "import/no-unresolved": "off", // WHY: does not resolve ts aliases
+    "import/no-unused-modules": "off", // WHY: throws an error
+    "import/no-useless-path-segments": "error",
+    "import/no-webpack-loader-syntax": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "unknown",
+          "external",
+          "internal",
+          "parent",
+          "index",
+          "sibling",
+          "object"
+        ],
+        "pathGroups": [
+          { "pattern": "^", "group": "internal", "position": "after" },
+          { "pattern": "^/**", "group": "internal", "position": "after" },
+          { "pattern": "&", "group": "internal", "position": "after" },
+          { "pattern": "&/**", "group": "internal", "position": "after" },
+          { "pattern": "$", "group": "internal", "position": "after" },
+          { "pattern": "$/**", "group": "internal", "position": "after" },
+          { "pattern": "%", "group": "internal", "position": "after" },
+          { "pattern": "%/**", "group": "internal", "position": "after" },
+          { "pattern": "~", "group": "internal", "position": "after" },
+          { "pattern": "~/**", "group": "internal", "position": "after" }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ],
+    "import/no-unassigned-import": "warn",
+    "import/no-named-default": "off",
+    "import/no-default-export": "off",
+    "import/no-named-export": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/prefer-default-export": "warn",
+    "import/unambigous": "off",
+    "indent": "off", // WHY: prettier conflict
+    "keyword-spacing": ["error"],
+    "linebreak-style": ["error", "unix"],
+    "max-classes-per-file": "off",
+    "max-len": "off", // WHY: controlled by prettier and .editorconfig
+    "new-cap": "off",
+    "newline-per-chained-call": "off", // WHY: prettier conflict
+    "no-await-in-loop": "off",
+    "no-console": "error",
+    "no-empty-function": "off",
+    "no-extra-semi": "off",
+    "no-confusing-arrow": "off", // WHY: prettier conflict
+    "no-dupe-class-members": "off", // WHY: conflicts with typescript overloads
+    "no-nested-ternary": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": "off",
+    "no-restricted-exports": ["error", { "restrictedNamedExports": [] }],
+    "no-restricted-imports": [
+      "error",
+      {
+        "name": "axios",
+        "message": "Use node-fetch instead"
+      },
+      {
+        "name": "moment",
+        "message": "Use luxon instead"
+      }
+    ],
+    "no-restricted-modules": [
+      "error",
+      {
+        "name": "axios",
+        "message": "Use node-fetch instead"
+      },
+      {
+        "name": "moment",
+        "message": "Use luxon instead"
+      }
+    ],
+    "no-restricted-syntax": "off",
+    "no-return-await": "off",
+    "no-shadow": "off", // WHY: superseded by @typescript-eslint/no-shadow
+    "no-spaced-func": "off", // WHY: prettier conflict
+    "no-tabs": "error",
+    "no-template-curly-in-string": "warn",
+    "no-underscore-dangle": "off",
+    "no-unexpected-multiline": "off", // WHY: prettier conflict
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    "no-unused-vars": "off", // WHY: eslint typescript parser fails to recognize imports as used
+    "no-use-before-define": ["off", { "functions": true, "classes": false, "variables": true }], // WHY: use @typescript-eslint/no-use-before-define instead
+    "no-useless-constructor": "off", // WHY: doesn't recognize ts parameter property syntax
+    "node/no-process-env": "error",
+    "object-curly-newline": "off",
+    "operator-linebreak": ["off", "after", { "overrides": { "?": "before", ":": "before"} }], // WHY: prettier conflict
+    "prefer-arrow-callback": "error", // NOTE: conflicts with [this] functions if `this` is not used
+    "prefer-destructuring": ["error", {
+      "VariableDeclarator": {
+        "array": true,
+        "object": true
+      },
+      "AssignmentExpression": {
+        "array": false,
+        "object": false
+      }
+    }],
+    "prettier/prettier": "error",
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
+    "semi": ["error", "never"],
+    "semi-style": ["error", "first"],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "space-before-function-paren": "off", // WHY: conflicts with unnamed constructor signatues in TS types
+    "space-in-parens": "off" // WHY: prettier conflict
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "settings": {
+        "import/parsers": {
+          "@typescript-eslint/parser": [
+            ".ts",
+            ".tsx"
+          ]
+        },
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true
+          },
+          "node": {
+            "paths": ["node_modules", "src"],
+            "extensions": [
+              ".js",
+              ".jsx",
+              ".jss",
+              ".ts",
+              ".tsx",
+              ".tss"
+            ],
+            "moduleDirectory": [
+              "node_modules",
+              "packages/"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "files": [
+        "loadEnvFile.ts",
+        "env.ts",
+        "framework/**"
+      ],
+      "rules": {
+        "node/no-process-env": "off"
+      }
+    },
+    {
+      "files": [
+        "loadEnvFile.ts"
+      ],
+      "rules": {
+        "global-require": "warn",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+      }
+    },
+    {
+      "files": [
+        "**/*Dsl.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/no-shadow": "off"
+      }
+    },
+    {
+      "files": [
+        "packages/tests.lib/**/*",
+        "**/*.test.ts"
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+      }
+    },
+    {
+      "files": [
+        "test/**/*"
+      ],
+      "rules": {
+        "consistent-return": "off"
+      }
+    },
+    {
+      "files": [
+        "packages/tests.lib/**/*",
+        "test/**/*",
+        "**/*.test.ts"
+      ],
+      "globals": {
+        "assertShape": true,
+        "delay": true,
+        "describe": true,
+        "it": true,
+        "wait": true
+      }
+    },
+    {
+      "files": [
+        "scripts/**/*",
+        "esbuildPlugins.ts",
+        "fetch-ssm-parameters.js",
+        "getSsmParameters.ts",
+        "serverless-compose.ts",
+        "*.sls.ts"
+      ],
+      "rules": {
+        "import/no-commonjs": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/no-import-module-exports": "off",
+        "no-console": "off",
+        "node/no-process-env": "off"
+      }
+    },
+    {
+      "files": [
+        "scripts/**/*"
+      ],
+      "rules": {
+        // "import/no-commonjs": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+      }
+    },
+    {
+      "files": [
+        "bin/**/*"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.js"
+      ],
+      "rules": {
+        "import/no-commonjs": "off"
+      }
+    }
+  ]
+}

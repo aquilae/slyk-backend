@@ -1,0 +1,35 @@
+{
+  "extends": "./tsconfig.shared.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": false,
+    "paths": {
+      "$/*": ["./packages/*"],
+      "%/*": ["./packages/tests.lib/*"],
+      "&/*": ["./framework/*"],
+      "^/*": ["./*"],
+      "framework/*": ["{invalid}/*"],
+      "packages/*": ["{invalid}/*"]
+    },
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictPropertyInitialization": true,
+    "sourceMap": true,
+    "target": "ES2022",
+    "jsx": "react-jsx"
+  },
+  "references": [
+    { "path": "./framework/cdk" },
+    { "path": "./framework/core" },
+    { "path": "./framework/http" },
+    { "path": "./framework/state-machines" },
+    { "path": "./packages/playground" },
+    { "path": "./packages/sports" }
+  ],
+  "files": [],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
+}

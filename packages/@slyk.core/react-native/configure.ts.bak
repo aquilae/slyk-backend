@@ -1,0 +1,15 @@
+import type SlykConfig from './SlykConfig'
+import type SlykModule from './SlykModule'
+
+export interface Configure {
+  <T extends SlykConfig>(config: T): T
+
+  <T extends SlykModule<any, any>>(
+    module: T,
+    config: T extends SlykModule<infer U, any> ? U : never
+  ): T extends SlykModule<infer U, any> ? U : never
+}
+
+const configure: Configure = (...args: any[]) => (args.length > 0 ? args[1] : args[0])
+
+export default configure
